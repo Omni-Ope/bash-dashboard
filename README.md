@@ -104,29 +104,33 @@ These screenshots have to come from the VMs. A run on Windows or Git Bash is not
 
 ## Git history
 
-The repo needs at least three commits, and the submitted `git log --oneline` needs every group member as an author. The baseline history is a starting point. Before you submit:
+The repo needs at least three commits, and the submitted git log needs every group member as an author. One GitHub repo is the shared copy. Pedro Gonzales clones that repo, edits his part, and pushes. A second repo does not merge cleanly with this history.
 
-1. Each person sets their own name and email:
-   ```bash
-   git config user.name "Your Name"
-   git config user.email "you@school.edu"
-   ```
-2. Each person changes or extends the section they will present, then commits that work.
-3. Screenshot `git log --oneline` after those commits.
+```bash
+git config user.name "Pedro Gonzales"
+git add dashboard.sh
+git commit -m "Describe the Ubuntu service names and the watch loop"
+git push
+```
+
+Screenshot this command so both names are visible:
+
+```bash
+git log --oneline --format="%h %an %s"
+```
 
 Do not rewrite the author of someone else's commit.
 
-## Who presents which part
+## Who did which part
 
-Replace the names below before you turn the project in. Split the rows across the people in your group. A group of two can give the third row to either person.
+Estefan Ramos took the Fedora side and the readings that describe the machine itself. Pedro Gonzales took the Ubuntu side and the readings that describe what the machine is doing right now.
 
-| Name | Section to own and present | Functions |
+| Name | What they own | What they present |
 | --- | --- | --- |
-| [name] | System info, CPU, memory, thresholds | `show_system_info`, `show_cpu_memory`, `cpu_usage_percent`, `dashboard.conf` |
-| [name] | Disk, processes, network | `show_disk`, `show_top_processes`, `show_network` |
-| [name] | Services, logins, journal errors, `--watch` and `--log` | `show_services`, `show_logins`, `show_log_errors`, `watch_loop` |
+| Estefan Ramos | System info, CPU, memory, disk, and the Fedora service names (`sshd`, `crond`, `firewalld`). Thresholds live in `dashboard.conf`. Functions: `show_system_info`, `show_cpu_memory`, `cpu_usage_percent`, `show_disk`. | Slides 2 and 3. Slide 3 is the Fedora demo. |
+| Pedro Gonzales | The Ubuntu service names (`ssh`, `cron`, `ufw` or `nftables`), top processes, network, logins, journal errors, `--watch`, and `--log`. Functions: `show_services`, `show_top_processes`, `show_network`, `show_logins`, `show_log_errors`, `watch_loop`. | Slides 4, 5, and 6. Slide 4 is the Ubuntu Server demo. |
 
-Slide 1 of the deck is the title. Slides 3 and 4 are the live VM demos. Every person speaks for at least one slide.
+Slide 1 lists both names. Estefan opens. Pedro takes the Ubuntu demo, the code, and the challenges. Both should be ready for questions on their own functions.
 
 ## Project files
 

@@ -3,7 +3,7 @@ const pptxgen = require("pptxgenjs");
 const pres = new pptxgen();
 pres.defineLayout({ name: "CLASS_WIDE", width: 13.333, height: 7.5 });
 pres.layout = "CLASS_WIDE";
-pres.author = "Bash Dashboard Group";
+pres.author = "Estefan Ramos, Pedro Gonzales";
 pres.title = "System Health Dashboard";
 pres.subject = "Fedora and Ubuntu Server bash dashboard";
 
@@ -73,7 +73,7 @@ function addCard(slide, x, y, w, h) {
   });
 
   const meta = [
-    ["GROUP", "Add your names before you present"],
+    ["GROUP", "Estefan Ramos\nPedro Gonzales"],
     ["DATE", "November 24, 2026"],
     ["TIME", "8–10 minutes, then questions"],
   ];
@@ -84,7 +84,7 @@ function addCard(slide, x, y, w, h) {
       fontFace: FONT, fontSize: 12, color: C.dim, margin: 0,
     });
     s.addText(item[1], {
-      x, y: 4.64, w: 3.8, h: 0.4,
+      x, y: 4.64, w: 3.9, h: 0.72,
       fontFace: FONT, fontSize: 16, color: C.ink, margin: 0,
     });
   });
@@ -94,7 +94,7 @@ function addCard(slide, x, y, w, h) {
     fontFace: FONT, fontSize: 14, color: C.muted, margin: 0,
   });
 
-  s.addNotes("About 30 seconds. Read the title, say your names, and say you will show the same script on Fedora and on Ubuntu Server. Every person speaks on at least one later slide.");
+  s.addNotes("About 30 seconds. Estefan Ramos opens. Say both names. Estefan presents the Fedora side. Pedro Gonzales presents the Ubuntu side.");
 }
 
 // Slide 2 — Goals and design
@@ -157,7 +157,7 @@ function addCard(slide, x, y, w, h) {
     });
   });
 
-  s.addNotes("About 90 seconds. The problem is too many commands for one status check. The design is one bash file, functions, and three flags. Point at the eight sections and say each one maps to a course topic. The person who owns system info and CPU can take this slide.");
+  s.addNotes("Estefan Ramos. About 90 seconds. The problem is too many commands for one status check. Point at system info, CPU, memory, and disk as your sections. Pedro covers processes, network, services, logins, and logs on later slides.");
 }
 
 // Slide 3 — Fedora
@@ -214,7 +214,7 @@ function addCard(slide, x, y, w, h) {
     fontFace: FONT, fontSize: 15, color: C.ink, margin: 0,
   });
 
-  s.addNotes("About 2 minutes, including the live switch. Do not read every line of the dashboard. Show the OS line, the CPU bar, and the three Fedora unit names. If the projector cannot show the VM, say so and use a screenshot you captured on Fedora. The person who owns disk, processes, and network can take this slide.");
+  s.addNotes("Estefan Ramos. About 2 minutes, including the live switch. Show the Fedora OS line, the CPU bar, and sshd, crond, and firewalld. Those three unit names are your side of the service check. If the projector cannot show the VM, use the Fedora screenshot.");
 }
 
 // Slide 4 — Ubuntu
@@ -269,7 +269,7 @@ function addCard(slide, x, y, w, h) {
     fontFace: FONT, fontSize: 15, color: C.muted, margin: 0,
   });
 
-  s.addNotes("About 2 minutes. Run the same commands on Ubuntu Server. Point at ssh.service, cron.service, and the firewall row. Say that CPU, disk, and journalctl stay the same. Mention inactive versus failed if ufw is installed but stopped. The person who owns services, logins, and logs can take this slide.");
+  s.addNotes("Pedro Gonzales. About 2 minutes. Run the same commands on Ubuntu Server. Point at ssh.service, cron.service, and the firewall row. Those names are your side of show_services. CPU, disk, and journalctl stay the same as Fedora. Mention inactive versus failed if ufw is installed but stopped.");
 }
 
 // Slide 5 — Code
@@ -336,7 +336,7 @@ function addCard(slide, x, y, w, h) {
     fontFace: FONT, fontSize: 13, color: C.muted, margin: 0,
   });
 
-  s.addNotes("About 90 seconds. Left snippet: distro order, native name first. Right snippet: the refresh loop. Do not read the code line by line. Say what problem each block solves. Either group member can take this slide.");
+  s.addNotes("Pedro Gonzales. About 90 seconds. Left snippet: you try Ubuntu names first on Ubuntu, and Fedora names first on Fedora. Right snippet: your watch loop. Do not read the code line by line. Estefan can add one sentence on the CPU sample if asked.");
 }
 
 // Slide 6 — Challenges
@@ -375,16 +375,16 @@ function addCard(slide, x, y, w, h) {
   });
 
   addCard(s, 0.5, 4.48, 12.33, 2.28);
-  s.addText("Put your names on the work you actually did and presented.", {
+  s.addText("Who owns which part", {
     x: 0.74, y: 4.62, w: 11.9, h: 0.32,
     fontFace: FONT, fontSize: 14, color: C.ink, margin: 0,
   });
-  s.addText("Name  —  system, CPU, memory, thresholds  —  slides 2 and 5\nName  —  disk, processes, network  —  slide 3\nName  —  services, logins, logs, and --watch  —  slides 4 and 6", {
-    x: 0.74, y: 5.02, w: 11.9, h: 1.5,
+  s.addText("Estefan Ramos  —  Fedora: system, CPU, memory, disk, sshd, crond, firewalld  —  slides 2 and 3\nPedro Gonzales  —  Ubuntu: services, processes, network, logins, logs, watch, log  —  slides 4, 5, and 6", {
+    x: 0.74, y: 5.05, w: 11.9, h: 1.4,
     fontFace: FONT, fontSize: 16, color: C.muted, margin: 0,
   });
 
-  s.addNotes("About 90 seconds. Pick one challenge you personally hit on a VM and say how you checked the fix. Then say who presents which section. Replace the Name lines before class. Do not claim a section you did not work on or present.");
+  s.addNotes("Pedro Gonzales. About 90 seconds. The service-name card is yours. Estefan can answer the CPU card if someone asks, because that sample is his. Then read the two ownership lines. Estefan: Fedora system, CPU, memory, disk, and sshd, crond, firewalld, slides 2 and 3. You: Ubuntu services, processes, network, logins, logs, watch, and --log, slides 4, 5, and 6.");
 }
 
 // Slide 7 — Close
