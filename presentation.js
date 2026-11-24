@@ -425,7 +425,7 @@ function addCard(slide, x, y, w, h) {
     });
   });
 
-  s.addText("Files:  dashboard.sh    dashboard.conf    README.md    this deck\nFolder:  Documents\\bash-dashboard", {
+  s.addText("Files:  dashboard.sh    dashboard.conf    README.md    this deck\nRepo:  https://github.com/Omni-Ope/bash-dashboard", {
     x: 0.5, y: 4.15, w: 12.3, h: 0.75,
     fontFace: FONT, fontSize: 16, color: C.muted, margin: 0,
   });
@@ -434,7 +434,7 @@ function addCard(slide, x, y, w, h) {
     fontFace: FONT, fontSize: 16, color: C.ink, margin: 0,
   });
 
-  s.addNotes("About 30 seconds, then stop. Leave 2 to 3 minutes for questions. If a question is about services, logins, or the watch loop, the person who presented that part should answer. Repo path is Documents\\bash-dashboard on this machine. Screenshots still need to be taken on the Fedora VM and the Ubuntu Server VM.");
+  s.addNotes("About 30 seconds, then stop. Leave 2 to 3 minutes for questions. If a question is about services, logins, or the watch loop, the person who presented that part should answer. The repo is https://github.com/Omni-Ope/bash-dashboard. Screenshots still need to be taken on the Fedora VM and the Ubuntu Server VM.");
 }
 
 pres.writeFile({ fileName: "C:/Users/eramo/Documents/bash-dashboard/Bash-Dashboard-Presentation.pptx" })
